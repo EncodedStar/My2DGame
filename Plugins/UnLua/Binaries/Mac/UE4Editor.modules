@@ -1,0 +1,9 @@
+{
+	"BuildId": "14830424",
+	"Modules": 
+	{
+		"Lua": "UE4Editor-Lua.dylib",
+		"UnLua": "UE4Editor-UnLua.dylib",
+		"UnLuaEditor": "UE4Editor-UnLuaEditor.dylib"
+	}
+}

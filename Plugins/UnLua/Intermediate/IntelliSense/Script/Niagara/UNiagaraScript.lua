@@ -1,0 +1,35 @@
+---Runtime script for a Niagara system
+---@class UNiagaraScript : UNiagaraScriptBase
+---@field public Usage ENiagaraScriptUsage @how this script is to be used. cannot be private due to use of GET_MEMBER_NAME_CHECKED
+---@field private UsageId FGuid @Specifies a unique id for use when there are multiple scripts with the same usage, e.g. events.
+---@field public ModuleUsageBitmask integer @When used as a module, what are the appropriate script types for referencing this module?
+---@field public Category string @Used to break up scripts of the same Usage type in UI display.
+---@field public ProvidedDependencies TArray<string> @Array of Ids of dependencies provided by this module to other modules on the stack (e.g. 'ProvidesNormalizedAge')
+---@field public RequiredDependencies TArray<FNiagaraModuleDependency> @Dependencies required by this module from other modules on the stack
+---@field public bDeprecated boolean @If this script is no longer meant to be used, this option should be set.
+---@field public DeprecationMessage string @Message to display when the script is deprecated.
+---@field public DeprecationRecommendation UNiagaraScript @Which script to use if this is deprecated.
+---@field public ConversionUtility TSubclassOf<UNiagaraConvertInPlaceUtilityBase> @Custom logic to convert the contents of an existing script assignment to this script.
+---@field public bExperimental boolean @Is this script experimental and less supported?
+---@field public ExperimentalMessage string @The message to display when a function is marked experimental.
+---@field public LibraryVisibility ENiagaraScriptLibraryVisibility @Defines if this script is visible to the user when searching for modules to add to an emitter.
+---@field public RapidIterationParameters FNiagaraParameterStore @Contains all of the top-level values that are iterated on in the UI. These are usually "Module" variables in the graph. They don't necessarily have to be in the order that they are expected in the uniform table.
+---@field public NumericOutputTypeSelectionMode ENiagaraNumericOutputTypeSelectionMode @The mode to use when deducing the type of numeric output pins from the types of the input pins.
+---@field public Description string
+---@field public Keywords string @A list of space separated keywords which can be used to find this script in editor menus.
+---@field public CollapsedViewFormat string @The format for the text to display in the stack if the value is collapsed. This supports formatting placeholders for the function inputs, for example "myfunc({0}, {1})" will be converted to "myfunc(1.23, Particles.Position)".
+---@field public Highlights TArray<FNiagaraScriptHighlight>
+---@field public ScriptMetaData TMap<string, string> @Script Metadata
+---@field private ScriptExecutionParamStoreCPU FNiagaraScriptExecutionParameterStore
+---@field private ScriptExecutionParamStoreGPU FNiagaraScriptExecutionParameterStore
+---@field private ScriptExecutionParamStore FNiagaraScriptExecutionParameterStore @The equivalent of ScriptExecutionParamStoreCPU (or GPU) cooked for the given platform.
+---@field private ScriptExecutionBoundParameters TArray<FNiagaraBoundParameter> @The cooked binding data between ScriptExecutionParamStore and RapidIterationParameters.
+---@field private Source UNiagaraScriptSourceBase @'Source' data/graphs for this script
+---@field private CachedScriptVMId FNiagaraVMExecutableDataId @Adjusted every time that we compile this script. Lets us know that we might differ from any cached versions.
+---@field private LastGeneratedVMId FNiagaraVMExecutableDataId @Adjusted every time ComputeVMCompilationId is called.
+---@field private ActiveCompileRoots TArray<UObject>
+---@field private CachedScriptVM FNiagaraVMExecutableData @Compiled VM bytecode and data necessary to run this script.
+---@field private CachedParameterCollectionReferences TArray<UNiagaraParameterCollection>
+---@field private CachedDefaultDataInterfaces TArray<FNiagaraScriptDataInterfaceInfo>
+local UNiagaraScript = {}
+

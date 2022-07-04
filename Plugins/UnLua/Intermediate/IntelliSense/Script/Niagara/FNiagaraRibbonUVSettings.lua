@@ -1,0 +1,11 @@
+---Defines settings for UV behavior for a UV channel on ribbons.
+---@class FNiagaraRibbonUVSettings
+---@field public LeadingEdgeMode ENiagaraRibbonUVEdgeMode @Specifies how UVs behave at the leading edge of the ribbon where particles are being added.
+---@field public TrailingEdgeMode ENiagaraRibbonUVEdgeMode @Specifies how UVs behave at the trailing edge of the ribbon where particles are being removed.
+---@field public DistributionMode ENiagaraRibbonUVDistributionMode @Specifies how ribbon UVs are distributed along the length of a ribbon.
+---@field public TilingLength number @Specifies the length in world units to use when tiling UVs across the ribbon when using the tiled distribution mode.
+---@field public Offset FVector2D @Specifies and additional offsets which are applied to the UV range
+---@field public Scale FVector2D @Specifies and additional scalers which are applied to the UV range.
+---@field public bEnablePerParticleUOverride boolean @Enables overriding overriding the U componenet with values read from the particles.  When enabled edge behavior and distribution are ignored.
+---@field public bEnablePerParticleVRangeOverride boolean @Enables overriding the range of the V component with values read from the particles.
+local FNiagaraRibbonUVSettings = {}

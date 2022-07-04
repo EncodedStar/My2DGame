@@ -1,0 +1,12 @@
+---@class FAutomatedTestPassResults
+---@field public ClientDescriptor string
+---@field public ReportCreatedOn FDateTime
+---@field public Succeeded integer
+---@field public SucceededWithWarnings integer
+---@field public Failed integer
+---@field public NotRun integer
+---@field public TotalDuration number
+---@field public ComparisonExported boolean
+---@field public ComparisonExportDirectory string
+---@field public Tests TArray<FAutomatedTestResult>
+local FAutomatedTestPassResults = {}

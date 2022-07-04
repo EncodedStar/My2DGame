@@ -1,0 +1,21 @@
+---@class UNiagaraEditorSettings : UDeveloperSettings
+---@field public DefaultScript FSoftObjectPath @Niagara script to duplicate as the base of all new script assets created.
+---@field public DefaultDynamicInputScript FSoftObjectPath @Niagara script to duplicate as the base of all new script assets created.
+---@field public DefaultFunctionScript FSoftObjectPath @Niagara script to duplicate as the base of all new script assets created.
+---@field public DefaultModuleScript FSoftObjectPath @Niagara script to duplicate as the base of all new script assets created.
+---@field public RequiredSystemUpdateScript FSoftObjectPath @Niagara script which is required in the system update script to control system state.
+---@field public GraphCreationShortcuts TArray<FNiagaraSpawnShortcut> @Shortcut key bindings that if held down while doing a mouse click, will spawn the specified type of Niagara node.
+---@field private bAutoCompile boolean @Whether or not auto-compile is enabled in the editors.
+---@field private bAutoPlay boolean @Whether or not simulations should start playing automatically when the emitter or system editor is opened, or when the data is changed in the editor.
+---@field private bResetSimulationOnChange boolean @Whether or not the simulation should reset when a value on the emitter or system is changed.
+---@field private bResimulateOnChangeWhilePaused boolean @Whether or not to rerun the simulation to the current time when making modifications while paused.
+---@field private bResetDependentSystemsWhenEditingEmitters boolean @Whether or not to reset all components that include the system currently being reset.
+---@field private bDisplayAdvancedParameterPanelCategories boolean @Whether or not to display advanced categories for the parameter panel.
+---@field private NewAssetDialogConfigMap TMap<string, FNiagaraNewAssetDialogConfig>
+---@field private HLSLKeywordReplacements TMap<string, string>
+---@field private NamespaceMetadata TArray<FNiagaraNamespaceMetadata>
+---@field private NamespaceModifierMetadata TArray<FNiagaraNamespaceMetadata>
+---@field private DefaultNamespaceMetadata FNiagaraNamespaceMetadata
+---@field private DefaultNamespaceModifierMetadata FNiagaraNamespaceMetadata
+local UNiagaraEditorSettings = {}
+
